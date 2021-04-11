@@ -4,7 +4,8 @@ import socket
 from requests import Session
 from bs4 import BeautifulSoup as bs
 
-URL = "http://172.16.0.1:8002/index.php?zone=iuh"
+URL = "https://pfsense.iuh.edu.vn:8003/index.php?zone=iuh"
+
 form = {
   "auth_user": "dhcn",  #default
   "auth_pass": "dhcn",  #default
@@ -36,7 +37,7 @@ def main():
   print(banner)
   # Check if user connect to wifi
   print("[!]Checking connection...")
-  while not check_host("172.16.0.1", 8002):
+  while not check_host("pfsense.iuh.edu.vn", 8003):
     print("[!]Please connect to wifi DHCN!")
     input("Press any key to continue...\n")
 
